@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: 573327415341.dkr.ecr.ap-southeast-1.amazonaws.com/ecs-ecr-service:latest
+        image: <your-account-id>.dkr.ecr.<your-region>.amazonaws.com/hello-world:latest
         ports:
-        - containerPort: 5000
+        - containerPort: 80
+
 
