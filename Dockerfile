@@ -1,18 +1,12 @@
-# Use a lightweight Python image as the base image
-FROM python:3.9-slim
+# Use the official Nginx image as the base image
+FROM nginx:alpine
 
-# Set the working directory inside the container
-WORKDIR /app
+# Copy custom configuration file to the container
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# Copy the Python script into the container at /app
-COPY hello.py /app
+# Create a directory to store custom HTML file
+RUN mkdir -p /usr/share/nginx/html
 
-# Install Flask, a lightweight WSGI web application framework
-RUN pip install Flask
-
-# Expose port 5000 to the outside world
-EXPOSE 5000
-
-# Define the command to run the application when the container starts
-CMD ["python", "hello.py"]
+# Copy custom HTML file to the container
+COPY index.html /usr/share/nginx/html
 
