@@ -1,5 +1,19 @@
 # eks-ecr-demo
-aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 573327415341.dkr.ecr.ap-southeast-1.amazonaws.com
+ vi Dockerfile
+  100  cd ecr
+  101  ls
+  102  vi Dockerfile
+  103  ls
+  104  cat Dockerfile
+  105  ls
+  106  cd ecr
+  107  ls
+  108  vi hello.py
+  109  ls
+  110  cat hello.py
+  111  docker build -t hello-world .
+  112  Start-Service docker
+  113  aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 573327415341.dkr.ecr.ap-southeast-1.amazonaws.com
   114  docker build -t ecs-ecr-service .
   115  docker images
   116  docker tag ecs-ecr-service:latest 573327415341.dkr.ecr.ap-southeast-1.amazonaws.com/ecs-ecr-service:latest
@@ -28,3 +42,4 @@ aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS
   139  kubectl logs hello-world-6948b5c59c-cvrsv
   140  kubectl get svc
   141  kubectl get pods
+
